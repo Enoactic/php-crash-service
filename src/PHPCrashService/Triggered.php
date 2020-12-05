@@ -7,7 +7,7 @@ class Triggered
     public function triggeredCrash($client_id, $client_secret, $uuid, $code = null, $message = null, $file = null, $line = null, $stack_trace = null, $request = null, $remark = null)
     {
         $client = new \GuzzleHttp\Client;
-        $tokenResponse = $client->request('POST','https://develop.crash.com:8890/oauth/token', [
+        $tokenResponse = $client->request('POST','https://crash.enoactic.com/oauth/token', [
             'http_errors' => false,
             'verify' => false,
             'form_params' => [
@@ -21,7 +21,7 @@ class Triggered
         $token = json_decode((string) $tokenResponse->getBody(), true)['access_token'];
 
         $client = new \GuzzleHttp\Client();
-        $crashResponse = $client->request('POST', 'https://develop.crash.com:8890/api/crash', [
+        $crashResponse = $client->request('POST', 'https://crash.enoactic.com/api/crash', [
             'http_errors' => false,
             'verify' => false,
             'form_params' => [
@@ -46,7 +46,7 @@ class Triggered
     public function triggeredKeepalive($client_id, $client_secret, $uuid, $message = null)
     {
         $client = new \GuzzleHttp\Client;
-        $tokenResponse = $client->request('POST','https://develop.crash.com:8890/oauth/token', [
+        $tokenResponse = $client->request('POST','https://crash.enoactic.com/oauth/token', [
             'http_errors' => false,
             'verify' => false,
             'form_params' => [
@@ -60,7 +60,7 @@ class Triggered
         $token = json_decode((string) $tokenResponse->getBody(), true)['access_token'];
 
         $client = new \GuzzleHttp\Client();
-        $keepaliveResponse = $client->request('POST', 'https://develop.crash.com:8890/api/keepalive', [
+        $keepaliveResponse = $client->request('POST', 'https://crash.enoactic.com/api/keepalive', [
             'http_errors' => false,
             'verify' => false,
             'form_params' => [

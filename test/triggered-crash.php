@@ -12,9 +12,9 @@ try{
     $a = $a + $b;
 }catch(Exception $error){
     print_r($triggered->triggeredCrash(
-        '99ed30f9-bc04-4134-8cb3-40050eea10d2',
-        'dohlhMJQrjATpZwLXavi6U/lkYy+3LQemN/3dXhbmGY=',
-        'd1e51624-1db4-4acc-948d-0354c62640cb',
+        'a054d124-7fd1-4528-9e76-2aaabb69b619',
+        'F/fjKhEt0T55O1cNrAGuwlLylCLx1g5qE/hOtOoZ2bQ=',
+        'd1a911d0-5912-46cc-8acd-b758e98ff3bd',
         $error->getCode(),
         $error->getMessage(),
         $error->getFile(),
